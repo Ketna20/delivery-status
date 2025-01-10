@@ -16,6 +16,9 @@ body {
     height: 700px;
     background: url('https://assets.codepen.io/6060109/ZigZag.png');
     /* background-size: cover; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h2, h5, h6, a, button {
@@ -28,13 +31,30 @@ h2, h5 {
 
 .panel {
     width: 30%;
-    min-width: 300px;
+    width: 350px;
     height: 600px;
     background-color: #ffffff;
-    margin: 70px auto;
+    margin: 70px 0;
     box-shadow: 0px 40px 40px -20px #3C7B61;
     border-radius: 5px;
     position: relative;
+    
+}
+.panel.left {
+    margin-right: -20px;
+}
+
+.panel.right {
+    margin-left: -20px;
+}
+
+.panel.left, .panel.right {
+    height: 550px;
+    z-index: 1;
+}
+.panel.center {
+    z-index: 9;
+    width: 370px;
 }
 
 #close-button {
@@ -48,6 +68,9 @@ h2, h5 {
     text-align: center;
     box-sizing: border-box;
     padding: 55px 45px;
+}
+inner-container > img {
+    width: 50%;
 }
 
 .inner-container > h2 {
@@ -63,6 +86,7 @@ h2, h5 {
     line-height: 26px;
     color: #828282;
 }
+
 
 .food-selection {
     display: flex;
@@ -98,26 +122,41 @@ h2, h5 {
     font-size: 12px;
 }
 
+.all-btn {
+    width: 100%;
+    padding: 15px 0;
+    color: white;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: 0.3 ease all; 
+}
+
 #ready-btn {
     width: 100%;
     padding: 15px 0;
     color: white;
-    background-color: green;
-    border: none;
-    font-weight: 800;
-    font-size: 15px;
     background: #46A67E;
-    margin-top: 20px;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
     border-radius: 5px;
-    filter: drop-shadow(0px, 4px, 4px rgb(0, 0, 0, 0.25));
     box-shadow: 0px 20px 20px rgb(103, 189, 153, 0.5);
-    transition: 0.3 ease all;
+    filter: drop-shadow(0px, 4px, 4px rgb(0, 0, 0, 0.25));
+    transition: 0.3 ease all; 
 }
 
 #ready-btn:hover {
     opacity: 0.8;
     transition: 0.3 ease all;
     cursor: pointer;
+}
+
+.inactive-btn {
+    margin-top: 70px;
+    background: #BDBDBD;
+    box-shadow: 0px 20px 20px rgba(103, 189, 153, 0.2);
 }
 
 .dot-container {
@@ -141,4 +180,17 @@ h2, h5 {
 
 .dot.green {
     background-color: #67BD99;
+}
+
+.right, .left {
+    display: none;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .right, .left {
+        display: block;
+    }
+
+    
 }
