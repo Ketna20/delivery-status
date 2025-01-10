@@ -1,3 +1,3 @@
 # HTML + CSS
 
-![alt text](images/DeliveryStatus.png)
+![alt text](Images/DeliveryStatus.png)
